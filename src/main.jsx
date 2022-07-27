@@ -3,25 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
 
-const API = () => {
-  async function getTodos() {
-    try {
-      const url = 'https://jsonplaceholder.typicode.com/todos/'
-
-      const headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-
-      const resposta = await fetch(url, { headers })
-      const todos = await resposta.json()
-
-      if (resposta.ok) {
-        return todos
-      } else {
-        throw new Error('Erro ao buscar todos')
-      }
-
-  }
-}
